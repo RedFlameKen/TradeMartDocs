@@ -10,5 +10,3 @@ requests easier.
 > is still being repeated. To solve this, the
 > `com.realeyez.trademart.request.Request` was made to reduce this code
 > repitition.
-
-
