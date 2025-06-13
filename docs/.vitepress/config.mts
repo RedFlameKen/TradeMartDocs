@@ -4,10 +4,11 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "TradeMart Documentation",
   description: "Documentation for the TradeMart Mobile App",
+  base: "/TradeMartDocs/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/TradeMartDocs/' },
+      { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
 
