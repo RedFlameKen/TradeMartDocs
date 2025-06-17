@@ -13,9 +13,14 @@ The following are the fields of the `Response` class:
 | name       | type  | Description                           |
 |------------|-------|---------------------------------------|
 | code       | int   | The HTTP Response status code         |
-| content    | String| The JSON Content-Body of the response |
-| contentType| String| The ContentType of the Content-Body   |
+| content    | byte[]| The content within the http request   |
+| contentType| String| The Content-Type of the Content-Body   |
+| contentRange| [ContentRange](ContentRange.md)| The Content-Range of the Content-Body   |
 | location   | String| A location path. Usually returned when response is a redirection response or 201 created. |
+
+> [!NOTE]
+> Content was changed from String to byte[] to allow for raw video data to be
+> received.
 
 ## Methods
 The following are the methods of the Response class that you may use:
@@ -25,21 +30,37 @@ Get the response code of the response.
 
 returns: **int**
 
+### getContentBytes()
+Get the Content-Body of the response in the form of a **byte array (byte[])**.
+
+returns: **byte[]**
+
 ### getContent()
-Get the Content-Body of the response in the form of a **String**
+Get the Content-Body of the response casted to a **String**
 
 returns: **String**
 
 ### getContentJson()
 Get the Content-Body of the response in the form of a **JSONObject**. This
-method throws a JSONException.
+method throws a JSONException. This method should be used if the received
+Content-Body is of a json type (e.g. `application/json`).
 
 returns: **JSONObject**
 
 ### getContentType()
-Get the ContentType of the response's Content-Body
+Get the Content-Type of the response's Content-Body
 
 returns: **String**
+
+### getContentLength()
+Get the Content-Length of the response's Content-Body
+
+returns: **int**
+
+### getContentRange()
+Get the Content-Range of the response's Content-Body
+
+returns: [**ContentRange**](ContentRange.md)
 
 ### getLocation()
 Get the Location header field of the response

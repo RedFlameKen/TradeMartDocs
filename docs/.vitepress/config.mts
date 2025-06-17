@@ -19,7 +19,8 @@ export default defineConfig({
               {text: 'Request', link: '/request/Request'},
               {text: 'RequestUtil', link: '/request/RequestUtil'},
               {text: 'Response', link: '/request/Response'},
-              {text: 'Content', link: '/request/Content'}
+              {text: 'Content', link: '/request/Content'},
+              {text: 'ContentRange', link: '/request/ContentRange'}
           ]
       }
     ],
