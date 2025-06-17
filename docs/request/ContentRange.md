@@ -3,7 +3,7 @@ The `ContentRange` class serves as a structure to store Information about the
 Response's Content-Range header. 
 
 > [!INFO]
-> The Content-Range header is usually provided for Partial Content *201*
+> The Content-Range header is usually provided for Partial Content *206*
 > Responses. This means, the Content-Body received with the response is only
 > part of the original full Content-Body. For example, if the desired content
 > is only 128 bytes starting from the 32nd byte wherein the actual size of the
