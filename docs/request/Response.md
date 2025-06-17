@@ -19,7 +19,7 @@ The following are the fields of the `Response` class:
 | location   | String| A location path. Usually returned when response is a redirection response or 201 created. |
 
 > [!NOTE]
-> Content was changed from String to byte[] to allow for raw video data to be
+> content was changed from String to byte[] to allow for raw video data to be
 > received.
 
 ## Methods
