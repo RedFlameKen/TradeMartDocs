@@ -22,6 +22,23 @@ export default defineConfig({
               {text: 'Content', link: '/request/Content'},
               {text: 'ContentRange', link: '/request/ContentRange'}
           ]
+      },
+      {
+          text: 'Encryption',
+          items: [
+              {text: 'Encryption', link: '/encryption/Encryption'},
+              {text: 'Encryptor', link: '/encryption/Encryptor'},
+              {text: 'Decryptor', link: '/encryption/Decryptor'}
+          ]
+      },
+      {
+          text: 'Utilities',
+          items: [
+              {text: 'Encoder', link: '/util/Encoder'},
+              {text: 'Logger', link: '/util/Logger'},
+              {text: 'Dialogs', link: '/util/Dialogs'},
+              {text: 'DimensionsUtil', link: '/util/DimensionsUtil'}
+          ]
       }
     ],
 
