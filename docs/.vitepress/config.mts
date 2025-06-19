@@ -11,9 +11,9 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/TradeMart' }
     ],
-
     sidebar: [
       {
+          collapsed: true,
           text: 'Requests',
           items: [
               {text: 'Request', link: '/request/Request'},
@@ -24,6 +24,15 @@ export default defineConfig({
           ]
       },
       {
+          collapsed: true,
+          text: 'HTTP Server Endpoints',
+          items: [
+              {text: 'Server', link: '/server/server'},
+              {text: 'Endpoints', link: '/server/endpoints'},
+          ]
+      },
+      {
+          collapsed: true,
           text: 'Encryption',
           items: [
               {text: 'Encryption', link: '/encryption/Encryption'},
@@ -32,6 +41,7 @@ export default defineConfig({
           ]
       },
       {
+          collapsed: true,
           text: 'Utilities',
           items: [
               {text: 'Encoder', link: '/util/Encoder'},
@@ -41,7 +51,9 @@ export default defineConfig({
           ]
       }
     ],
-
+    search: {
+        provider: "local"
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/RedFlameKen/TradeMartDocs' }
     ]
