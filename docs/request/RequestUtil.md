@@ -2,9 +2,10 @@
 
 The RequestUtil is the primary way to make requests. Under the hood, it just
 configures the [`Request`](Request.md) class through the use of static methods.
-These methods will return an instance of `Response` which contains the response
-data that the server sent back. So make sure to store store the returned
-`Response` value when using any of the methods that this class provides.
+These methods will return an instance of [`Response`](Response.md) which
+contains the response data that the server sent back. So make sure to store
+store the returned [`Response`](Response.md) value when using any of the
+methods that this class provides.
 
 example:
 ```java
