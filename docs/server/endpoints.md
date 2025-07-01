@@ -1,8 +1,8 @@
 # Endpoints
 The following is a list of endpoints on the
 [server](https://github.com/RedFlameKen/TradeMartServer) that you may access.
-Endpoints with **\{...\}** on them should be substituted with the appropriate
-data.
+Endpoints with **\{...\}** on them should have those be substituted with the
+appropriate data.
 
 | Endpoint                                                      | Method    |
 |---------------------------------------------------------------|-----------|
