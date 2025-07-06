@@ -42,6 +42,17 @@ export default defineConfig({
       },
       {
           collapsed: true,
+          text: 'UI components',
+          items: [
+              {text: 'UI Components', link: '/gui/UI Components'},
+              {text: 'SnapScroll', link: '/gui/SnapScroll'},
+              {text: 'SnapScrollH', link: '/gui/SnapScrollH'},
+              {text: 'ScrollDot', link: '/gui/ScrollDot'},
+              {text: 'ScrollDotPanel', link: '/gui/ScrollDotPanel'},
+          ]
+      },
+      {
+          collapsed: true,
           text: 'Utilities',
           items: [
               {text: 'Encoder', link: '/util/Encoder'},
