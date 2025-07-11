@@ -16,14 +16,77 @@ appropriate data.
 | [/post/user/\{user_id\}](#post-user-user-id)                  | POST      |
 | [/media/\{media_id\}](#media-media-id)                        | GET       |
 | [/media/video/\{filename\}](#media-video-filename)            | GET       |
+| [/service/\{job_id\}](#service-job-id)                        | GET       |
+| [/service/create](#service-create)                            | POST      |
 
 ## /user/login
 This **POST** endpoint asks for a JSON containing login information then sends
-back verification information about the sent login information.
+back verification information about the sent login information. 
+
+The following are the JSON fields that are expected to be in the request's
+content body:
+
+* username: `String` <br>
+The username of the user to be logged in.
+
+* password: `String` <br>
+The user's password. This **MUST** be encrypted using
+[`Encryptor`](/encryption/Encryptor.md). `Encryptor` will also encode it in
+Base64.
+
+* salt_iv: `JSONObject` <br>
+Random bytes that are used to increase the randomness of the password
+encryption. This is encoded in base64 so that it can be placed in a JSON. 
+
+> [!IMPORTANT]
+> This **MUST** be obtained via the [`Encryptor`](/encryption/Encryptor.md)
+> used to encrypt the password.
+
+The verification information comes in the form of a json with the following
+fields:
+
+* status: `String` <br>
+Whether or not the request was successful ("success" | "failed")
+
+* message: `String` <br>
+A message pertaining to the status of the request.
+
+* user_data?: `JSONObject` <br>
+Information about the logged in user.
 
 ## /user/signup
 This **POST** endpoint asks for a JSON containing signup information then sends
 back success and verification information about the sent signup information.
+
+The following are the JSON fields that expected in the request's content body:
+* username: `String` <br>
+The username of the user to be created.
+
+* password: `String` <br>
+The user's created password. This **MUST** be encrypted using
+[`Encryptor`](/encryption/Encryptor.md). `Encryptor` will also encode it in
+Base64.
+
+* salt_iv: `JSONObject` <br>
+Random bytes that are used to increase the randomness of the password
+encryption. This is encoded in base64 so that it can be placed in a JSON. 
+
+> [!IMPORTANT]
+> This **MUST** be obtained via the [`Encryptor`](/encryption/Encryptor.md)
+> used to encrypt the password.
+
+The creation verification information comes in the form of a json with the
+following fields:
+
+* status: `String` <br>
+Whether or not the request was successful ("success" | "failed")
+
+* message: `String` <br>
+A message pertaining to the status of the request.
+
+* user_data?: `JSONObject` <br>
+Information about the created user if the request was successful.
+
 
 ## /user/profile/\{user_id\}
 This **GET** endpoint is used to gather profile data of the user with the
@@ -75,7 +138,7 @@ endpoint's generated response will contain a JSON containing the file's
 This **GET** endpoint is used to get a video file from the server. This
 endpoint's generated response will contain the raw byte data of the video file.
 
-## /service/{job_id}
+## /service/\{job_id\}
 This **GET** endpoint is used to get a *Job Listing's* details in the for of a
 json. Information about `JobListing` can be viewed
 [here](/entity/JobListing.md).
