@@ -76,4 +76,11 @@ This **GET** endpoint is used to get a video file from the server. This
 endpoint's generated response will contain the raw byte data of the video file.
 
 ## /service/{job_id}
-This **GET** endpoint is used to get a *Job Listing*'s details in the for of a json.
+This **GET** endpoint is used to get a *Job Listing's* details in the for of a
+json. Information about `JobListing` can be viewed
+[here](/entity/JobListing.md).
+
+## /service/create
+This **POST** endpoint is used to publish a new Job Listing. This accepts a
+JSON content containing Job Listing details. Information about `JobListing` can
+be viewed [here](/entity/JobListing.md).

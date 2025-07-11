@@ -33,6 +33,14 @@ export default defineConfig({
       },
       {
           collapsed: true,
+          text: 'Entities',
+          items: [
+              {text: 'Entities', link: '/entity/Entities'},
+              {text: 'JobListing', link: '/entity/JobListing'}
+          ]
+      },
+      {
+          collapsed: true,
           text: 'Encryption',
           items: [
               {text: 'Encryption', link: '/encryption/Encryption'},
