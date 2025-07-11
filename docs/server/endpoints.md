@@ -74,3 +74,6 @@ endpoint's generated response will contain a JSON containing the file's
 ## /media/video/\{filename\}
 This **GET** endpoint is used to get a video file from the server. This
 endpoint's generated response will contain the raw byte data of the video file.
+
+## /service/{job_id}
+This **GET** endpoint is used to get a *Job Listing*'s details in the for of a json.
