@@ -121,7 +121,11 @@ information about the created post.
 This **POST** endpoint serves as a follow-up request endpoint for uploading
 media for a previously sent [/post/publish](#post-publish) request. This
 endpoint only accepts one media file at a time. So if a post has multiple media
-files, multiple requests to this endpoint should be made.
+files, multiple requests to this endpoint should be made. 
+
+Requests to this endpoint should have a `Content-Disposition` header that
+contains the filename of the media file to be uploaded. The Request's
+Content-Body should also contain the raw byte data of the file to be uploaded.
 
 ## /post/user/\{user_id\}
 This **POST** endpoint is used to gather post IDs related to the user with the
@@ -131,12 +135,21 @@ information about these posts, and should not be included in the response.
 
 ## /media/\{media_id\}
 This **GET** endpoint is used to get a media file from the server. This
-endpoint's generated response will contain a JSON containing the file's
-**filename** and raw byte **data**.
+endpoint's Response will have a `Content-Disposition` header containing the
+filename of the requested resource. The content of the Response contain the
+byte data of the requested file.
+
+## /media/image/\{filename\}
+This **GET** endpoint is used to get a video file from the server. This
+endpoint's Response will have a `Content-Disposition` header containing the
+filename of the requested image. This endpoint's generated response will
+contain the byte data of the image file.
 
 ## /media/video/\{filename\}
-This **GET** endpoint is used to get a video file from the server. This
-endpoint's generated response will contain the raw byte data of the video file.
+This **GET** endpoint is used to get an
+[HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) video file from the
+server. This endpoint's generated response will contain the contents of the HLS
+(.m3u8) file which contains its corresponding the video segment (.ts) file.
 
 ## /service/\{job_id\}
 This **GET** endpoint is used to get a *Job Listing's* details in the for of a
@@ -147,3 +160,13 @@ json. Information about `JobListing` can be viewed
 This **POST** endpoint is used to publish a new Job Listing. This accepts a
 JSON content containing Job Listing details. Information about `JobListing` can
 be viewed [here](/entity/JobListing.md).
+
+A Request to this endpoint will result in a JobListing creation verification in
+the form of a JSON with the following fields:
+
+* status: `String` <br>
+Whether or not the request was successful ("success" | "failed")
+
+* message: `String` <br>
+A message pertaining to the status of the request.
+
