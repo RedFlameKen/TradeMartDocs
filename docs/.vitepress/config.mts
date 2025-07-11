@@ -20,7 +20,8 @@ export default defineConfig({
               {text: 'RequestUtil', link: '/request/RequestUtil'},
               {text: 'Response', link: '/request/Response'},
               {text: 'Content', link: '/request/Content'},
-              {text: 'ContentRange', link: '/request/ContentRange'}
+              {text: 'ContentRange', link: '/request/ContentRange'},
+              {text: 'ContentDisposition', link: '/request/ContentDisposition'}
           ]
       },
       {
@@ -75,6 +76,9 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/RedFlameKen/TradeMartDocs' }
-    ]
+    ],
+    outline: {
+        level: [2, 4]
+    }
   }
 })
